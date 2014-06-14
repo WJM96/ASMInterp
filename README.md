@@ -19,22 +19,16 @@ It's a sort of psuedo assembler/interpreter. It takes a plaintext file "assemble
         rfn (ret)
         
 Labels, constant definition, and comments are all supported. 
+  Labels are defined by appending a ':'. They are referenced just like hardcoded numbers
+  Comments are defined with a ';'. The rest of the line will be ignored, similar to '//' in other languages
+    However, there must be whitespace between code and the ';'.
+        mov bx [bx];comment    no!
+        mov bx [bx] ;comment   yes!
+  Constants are defined with the def command, like so: 
+        def myConstant 125
 
 
-Labels are defined with a colon (':') appended to the end. Label references are implemented as if they were hard numbers. for example:
-        mov ax [myLabel]
-is the same thing as:
-        mov ax [50]
-assuming that myLabel is at address 50.
-
-
-Constants may be defined with the def command, like so:
-        def null 50
-They are treated the same way as labels.
-
-Comments are created with a semicolon (';'). Everything after the ';' will be ignored, until a new line. However, there must be whitespace between code and the ';'. so:
-        mov bx [bx];comment here
-will not work.
+        
         
 
 
