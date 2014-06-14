@@ -2,7 +2,7 @@
 ;This program gets numbers, doubles, and outputs them until 0 is entered
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-def null 0  ;not needed, I just like the def command
+def null 0  ;not needed, just an example
 
 loop:
 	get
@@ -11,7 +11,7 @@ loop:
 	je done
 
 	fun double 1
-		ax
+		ax	
 
 	put
 
@@ -51,3 +51,4 @@ double:
 	rfn
 
 sp: 0
+

@@ -719,6 +719,25 @@ void getOps(Memory full, Memory &op1, Memory &op2)
 /********************************************************
 callFunc executes the FUN instruction. Mainly, it places things on the stack
 and puts the appropriate operands in memory.
+
+	fun pushes(in order) the stack pointer, flag, registers(from dx->ax),
+	and instruction pointer(that points to the next instruction).
+	bx is then set the new stack pointer, and the program jumps to the function.
+	arguments are stored in memory //after the function call//
+	so in memory it looks like :
+		fun
+		<address>
+		<number of arguments>
+
+		<type of argument>
+		<argument value(if needed)>
+		and so on...
+
+	arguments can be accessed in the function like so:
+		mov bx [bx]			;bx = oldInstructionPointer
+		sub bx 1			;bx now points to the last argument
+		mov ax [bx]			;ax = lastArg
+
 *********************************************************/
 bool callFunc()
 {
