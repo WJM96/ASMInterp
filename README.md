@@ -4,7 +4,7 @@ Author:
 Description:
   This was a project I did for school over the course of a semester. The assignment was iterative, so we started with just   implementing mov, and went from there. 
 
-It's a sort of psuedo assembler/interpreter. The instruction set is 8-bit, but the actual memory is 16-bit. It takes a plaintext file "assembles" it into machine code in memory, and then "executes" it. It supports the following operations:
+It's a sort of psuedo assembler/interpreter. The instruction set is 8-bit, but the actual memory is 16-bit. It takes a plaintext file and "assembles" it into machine code in memory. Then it "executes" it. It supports the following operations:
 
         mov
         add
@@ -42,7 +42,6 @@ The function command -- fun -- is used like so:
             
   While recursion works, it fills up memory /very/ fast.
         
-
 
 
 Registers:
